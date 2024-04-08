@@ -13,21 +13,23 @@
 <body>
 
     <div class="wrapper">
-        <form action="">
+        <form action="{{ route('register') }}" method="POST">
+            @csrf
+            @method('post')
             <h1>Registration</h1>
 
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" name="name" placeholder="Username" required>
                 <i class='bx bxs-user'></i>
             </div>
 
             <div class="input-box">
-                <input type="email" placeholder="Email" required>
+                <input type="email" name="email"  placeholder="Email" required>
                 <i class='bx bxs-envelope'></i>
             </div>
 
             <div class="input-box">
-                <input type="password" placeholder="Password" required>
+                <input type="password" name="password"  placeholder="Password" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
 
@@ -36,10 +38,10 @@
                 <a href="#">Forgot password?</a>
             </div> -->
 
-            <button type="submit" class="btn">Register</button>
+            <input type="submit" class="btn" value="Register"></input>
 
             <div class="register-link">
-                <p>Already a user? <a href="#">Login</a></p>
+                <p>Already a user? <a href="{{ route('login') }}">Login</a></p>
             </div>
         </form>
     </div>
