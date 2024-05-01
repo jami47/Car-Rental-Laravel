@@ -35,13 +35,22 @@ class AuthController extends Controller
                 //Cookie::queue('password', $request->password, $minutes);
             }
 
-            return redirect('home');
+            //! Get the currently authenticated user
+            $user = Auth::user();
+
+            //! Check the usertype of the user
+            /* if($user->usertype == 'admin') {
+                return redirect('dashboard');
+            } else {
+                return redirect('home');
+            } */
+            return redirect('dashboard');
         }
 
         //! If Invalid Credentials are given,
 
         Cookie::queue(Cookie::forget('username')); //? Removes cookie
-        return redirect('/log')->withError('Invalid Credentials');
+        return redirect('/login')->withError('Invalid Credentials');
     }
 
     public function registerpg()
@@ -67,7 +76,7 @@ class AuthController extends Controller
             'password'=> Hash::make($request->password)
         ]);
 
-        //! User Login
+        //! User Login immediately after successful Registration
 
         if(Auth::attempt($request->only('email','password')))
         {
@@ -78,9 +87,19 @@ class AuthController extends Controller
 
     }
 
+    //! Admin Login
+    public function dashpage()
+    {
+        return view('admin.dashboard');
+    }
+
     public function home()
     {
-        return view('user.home');
+        if(Auth::user()->usertype == 'user')
+            return view('user.home');
+        else
+            //return view('admin.dashboard');
+            return redirect('dashboard');
     }
 
     public function logout()
