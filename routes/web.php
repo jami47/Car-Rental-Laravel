@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CarAdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +33,17 @@ Route::group(['middleware'=>'auth'],function(){
 });
 
 Route::get('dashboard',[AuthController::class,'dashpage'])->name('dashboard')->middleware('admin');
+// Route::get('dashboard/car',[AuthController::class,'dashpage'])->name('dashboard')->middleware('admin');
 
+//! Using middleware group
+Route::group(['prefix' => '/dashboard', 'middleware' => 'admin'], function () {
+    Route::get('/cars', [AuthController::class, 'dashcarpage'])->name('cars');
+    Route::delete('/cars/{car}', [CarAdminController::class, 'destroy'])->name('cars.destroy');
+    Route::put('/cars/{car}', [CarAdminController::class, 'update'])->name('cars.update');
+    //Route::post('/bank-account', [BankAccountController::class, 'update']);
+});
+
+Route::post('/addCar', [CarAdminController::class, 'store']);
 
 /* Route::get('/log', function () {
     return view('auth.login');
