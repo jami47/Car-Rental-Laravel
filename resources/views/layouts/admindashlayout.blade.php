@@ -29,14 +29,16 @@
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom"><i
                     class="fas fa-user-secret me-2"></i>Admin-Panel</div>
             <div class="list-group list-group-flush my-3">
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ route('adprof') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-user me-2"></i>Profile</a>
                 <a href="{{ route('cars') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-car me-2"></i>Cars</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-shopping-cart me-2"></i>Rents</a>
+                <a href="{{ route('used') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-clipboard me-2"></i>Used</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-comment-dots me-2"></i>Chats</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i

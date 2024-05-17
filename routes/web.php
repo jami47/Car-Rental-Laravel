@@ -40,6 +40,11 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'admin'], function () {
     Route::get('/cars', [AuthController::class, 'dashcarpage'])->name('cars');
     Route::delete('/cars/{car}', [CarAdminController::class, 'destroy'])->name('cars.destroy');
     Route::put('/cars/{car}', [CarAdminController::class, 'update'])->name('cars.update');
+
+    Route::get('/used', [CarAdminController::class, 'dashapipage'])->name('used');
+
+    Route::get('/adprof', [CarAdminController::class, 'dashprof'])->name('adprof');
+    Route::post('/change-password', [CarAdminController::class, 'changePassword'])->name('changeadpass');
     //Route::post('/bank-account', [BankAccountController::class, 'update']);
 });
 

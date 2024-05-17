@@ -53,4 +53,10 @@
         </div>
 
     </div>
+
+    <div align="center">
+        <img src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXVwbGNhd2huYW9yYzZmZXNxb3JwZmd4Mmt4djJpamF3NDduMzE3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NJC2AVN5Zqoqcf6gxn/giphy.gif" width = "390" style="margin-top: 5rem; border-radius: 50px; padding: 20px;height=200px; object-fit: cover;">
+        </div>
+
+       {{--  <div class="tenor-gif-embed" data-postid="20333244" data-share-method="host" data-aspect-ratio="1.18081" data-width="100%"><a href="https://tenor.com/view/shellie-car-shellie-bellie-shellie-coffee-coffee-car-gif-20333244">Shellie Car Shellie Bellie Sticker</a>from <a href="https://tenor.com/search/shellie+car-stickers">Shellie Car Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script> --}}
 @endsection

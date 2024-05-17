@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use GuzzleHttp\Client;
 use App\Models\Car;
+use App\Models\User;
 
 class CarAdminController extends Controller
 {
@@ -76,4 +80,49 @@ class CarAdminController extends Controller
         return redirect()->back()->with('success', 'Car updated successfully!');
     }
 
+    public function dashapipage()
+    {
+        $client = new Client(); //GuzzleHttp\Client
+        $url = "https://api.myjson.online/v1/records/37472189-3ddb-4faf-b926-302391fd6fe9";
+
+        $response = $client->request('GET', $url);
+
+        $statusCode = $response->getStatusCode();
+        $body = $response->getBody()->getContents();
+
+        $cars = json_decode($body)->data;
+        return view('admin.apiadmin', ['cars' => $cars]);
+    }
+
+    public function dashprof()
+    {
+        return view('admin.profileadmin');
+    }
+
+    public function changePassword(Request $request)
+    {
+        // Validate the new password length
+        $request->validate([
+            'newPassword' => ['required'],
+        ]);
+
+        // Get the currently authenticated user's email
+        $email = Auth::user()->email;
+
+        // Find the user with the same email
+        $user = User::where('email', $email)->first();
+
+        // Check if the user exists
+        if ($user) {
+            // Update the user's password
+            $user->password = Hash::make($request->newPassword);
+            $user->save();
+
+            // Redirect the user back with a success message
+            return redirect()->back()->with('success', 'Password changed successfully!');
+        } else {
+            // Redirect the user back with an error message
+            return redirect()->back()->with('error', 'User not found.');
+        }
+    }
 }
