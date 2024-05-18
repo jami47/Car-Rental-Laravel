@@ -78,4 +78,33 @@ class HomeController extends Controller
         }
 
     }
+
+    public function return()
+    {
+        if(Auth::user()->usertype == 'admin')
+        {
+            return redirect('dashboard');
+        }
+
+        $user_id = Auth::user()->id;
+        $cars = Car::whereHas('rents', function ($query) use ($user_id) {
+            $query->where('user_id', $user_id);
+        })->get();
+
+        return view('user.returncar', ['cars' => $cars]);
+    }
+
+    public function returncar(Request $request, Car $car)
+    {
+        $carid = $car->id;
+
+        Rent::where('car_id', $carid)->delete();
+
+        //$xcar = Car::find($carid);
+
+        $car->available = "yes";
+        $car->save();
+
+        return redirect()->back()->with('success', 'Car Returned successfully!');
+    }
 }

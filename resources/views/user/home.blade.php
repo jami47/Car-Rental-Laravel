@@ -24,6 +24,7 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#reviews">Reviews</a></li>
+            <li><a href="{{ route('home.return') }}">Return</a></li>
         </ul>
         <div class="header-btn">
             <a href="{{ route('logout') }}" class="sign-out">Sign Out</a>

@@ -37,6 +37,9 @@ Route::group(['middleware'=>'auth'],function(){
 Route::group(['prefix' => '/home', 'middleware' => 'auth'], function () {
     Route::post('/rent/{car}', [HomeController::class, 'index'])->name('home.rents');
     Route::put('/rentcar/{car}/confirm', [HomeController::class, 'addrent'])->name('home.addrent');
+    Route::get('/return', [HomeController::class, 'return'])->name('home.return');
+
+    Route::post('return/{car}', [HomeController::class, 'returncar'])->name('home.returncar');
     //Route::post('/bank-account', [BankAccountController::class, 'update']);
 });
 
