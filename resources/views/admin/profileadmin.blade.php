@@ -15,13 +15,16 @@
                     <p><strong>Username:</strong> {{ Auth::user()->username }}</p>
                     <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
                     {{-- <p><strong>Password:</strong> {{ Auth::user()->password }}</p> --}}
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
-                        Change Password
-                    </button>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="" align="center" style="margin-top: 2rem">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+        Change Password
+    </button>
 </div>
 
 <!-- Modal -->

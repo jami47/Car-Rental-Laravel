@@ -43,6 +43,9 @@
                         </tr> --}}
 
                         @foreach ($cars as $car)
+                            @if($car->available == "no") {{--! If the car is sold or rented then skip the car  --}}
+                                @continue;
+                            @endif
                             <tr>
                                 <th scope="row">{{ $car->id }}</th>
                                 <td>{{ $car->name }}</td>

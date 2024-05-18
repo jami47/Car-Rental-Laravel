@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarAdminController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,13 @@ Route::group(['middleware'=>'guest'],function(){
 Route::group(['middleware'=>'auth'],function(){
     Route::get('home',[AuthController::class,'home'])->name('home');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+});
+
+//! Group for the User Panel
+Route::group(['prefix' => '/home', 'middleware' => 'auth'], function () {
+    Route::post('/rent/{car}', [HomeController::class, 'index'])->name('home.rents');
+    Route::put('/rentcar/{car}/confirm', [HomeController::class, 'addrent'])->name('home.addrent');
+    //Route::post('/bank-account', [BankAccountController::class, 'update']);
 });
 
 Route::get('dashboard',[AuthController::class,'dashpage'])->name('dashboard')->middleware('admin');

@@ -103,7 +103,11 @@ class AuthController extends Controller
     public function home()
     {
         if(Auth::user()->usertype == 'user')
-            return view('user.home');
+        {
+            $cars = Car::all();
+            return view('user.home', ['cars' => $cars]);
+        }
+
         else
             //return view('admin.dashboard');
             return redirect('dashboard');
