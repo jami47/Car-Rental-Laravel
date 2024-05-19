@@ -56,6 +56,8 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'admin'], function () {
 
     Route::get('/adprof', [CarAdminController::class, 'dashprof'])->name('adprof');
     Route::post('/change-password', [CarAdminController::class, 'changePassword'])->name('changeadpass');
+
+    Route::get('/rentadmin', [CarAdminController::class, 'rentadmin'])->name('rentadmin');
     //Route::post('/bank-account', [BankAccountController::class, 'update']);
 });
 

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use GuzzleHttp\Client;
 use App\Models\Car;
 use App\Models\User;
+use App\Models\Rent;
 
 class CarAdminController extends Controller
 {
@@ -124,5 +125,34 @@ class CarAdminController extends Controller
             // Redirect the user back with an error message
             return redirect()->back()->with('error', 'User not found.');
         }
+    }
+
+    public function rentadmin()
+    {
+        //$rents = Rent::all();
+        //$cars = $rents->pluck('car'); // This will give you a collection of Car models
+         $cars = Car::whereHas('rents')->orderBy('id')->get();
+        /*$users = User::whereHas('rents')->get();
+        return view('admin.rentsadmin', ['cars' => $cars], ['users' => $users]); */
+
+
+        //! Get all rents with their related cars and users
+        $rents = Rent::with('getcar', 'getuser')->orderBy('car_id')->get();
+
+        // Create a collection to hold the users
+        $users = collect();
+
+        // Iterate over the rents
+        foreach ($rents as $rent) {
+            // Add the user of the rent to the users collection
+            // $users->push($rent->getuser);
+            if ($rent->getuser) {
+                // Add the user of the rent to the users collection
+                $users->push($rent->getuser);
+            }
+        }
+
+        // Pass the cars and users to the view
+        return view('admin.rentsadmin', ['cars' => $cars, 'users' => $users]);
     }
 }

@@ -366,7 +366,7 @@ header {
     background: #474fa0;
     color: #fff;
     padding: 8px 20px;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem; cursor: pointer;
 }
 .copyright {
     padding: 20px;

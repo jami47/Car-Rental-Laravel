@@ -11,7 +11,7 @@ window.onscroll = () => {
     navbar.classList.remove('active');
 }
 
-/* const sr = ScrollReveal ({
+const sr = ScrollReveal ({
     distance: '60px',
     duration: 2500,
     delay: 400,
@@ -19,10 +19,11 @@ window.onscroll = () => {
 })
 
 sr.reveal('.text',{delay: 200, origin: 'top'})
+sr.reveal('.gifimg',{delay: 200, origin: 'left'})
 sr.reveal('.form-container form',{delay: 800, origin: 'left'})
 sr.reveal('.heading',{delay: 600, origin: 'top'})
 sr.reveal('.ride-container .box',{delay: 500, origin: 'top'})
 sr.reveal('.services-container .box',{delay: 500, origin: 'top'})
 sr.reveal('.about-container .box',{delay: 500, origin: 'top'})
 sr.reveal('.reviews-container',{delay: 500, origin: 'top'})
-sr.reveal('.newsletter .box',{delay: 450, origin: 'bottom'}) */
+sr.reveal('.newsletter .box',{delay: 450, origin: 'bottom'})

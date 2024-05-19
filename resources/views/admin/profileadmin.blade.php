@@ -5,8 +5,11 @@
 @endsection
 
 @section('body')
+            <div align="center">
+            <img src = "https://cdn.dribbble.com/users/966681/screenshots/2811861/media/89f3298982e10abb96d5059293ed3113.gif" width = "390" height="150" style="margin-top: 5rem; border-radius: 50px; padding: 20px;height=200px; object-fit: cover;" class="gifimg">
+            </div>
 <div class="container">
-    <div class="row justify-content-center" style="margin-top: 13rem">
+    <div class="row justify-content-center" style="margin-top: 3rem">
         <div class="col-md-5">
             <div class="card">
                 <div class="card-header">User Information</div>

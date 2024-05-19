@@ -35,7 +35,7 @@
                         class="fas fa-user me-2"></i>Profile</a>
                 <a href="{{ route('cars') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-car me-2"></i>Cars</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ route('rentadmin') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-shopping-cart me-2"></i>Rents</a>
                 <a href="{{ route('used') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-clipboard me-2"></i>Used</a>
@@ -71,8 +71,8 @@
                                 <i class="fas fa-user me-2"></i>{{ Auth::user()->username }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="{{ route('adprof') }}">Profile</a></li>
+                                {{-- <li><a class="dropdown-item" href="#">Settings</a></li> --}}
                                 <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                             </ul>
                         </li>

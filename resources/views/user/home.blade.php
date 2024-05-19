@@ -35,12 +35,23 @@
     <section class="home" id="home">
         <div class="text">
             <h1><span>Looking</span> to <br>rent a car</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Tempore, deserunt quis!</p>
+            <p>Your Perfect Ride Awaits! Experience Luxury on Every Journey <br>Drive Your Dream!</p>
             <div class="app-stores">
                 <img src="{{ asset('images/cars/ios.png') }}" alt="">
                 <img src="{{ asset('images/cars/play.png') }}" alt="">
             </div>
         </div>
+
+            {{-- <div style="position: absolute;
+                                                    bottom: 2rem;
+                                                    left: 80px;">
+            <img src = "https://cdn.dribbble.com/users/966681/screenshots/2811861/media/89f3298982e10abb96d5059293ed3113.gif" width = "390" height="150" style="margin-top: 5rem; border-radius: 50px; padding: 20px;height=200px; object-fit: cover;" class="gifimg">
+            </div> --}}
+            <div {{-- align="center" --}} style="position: absolute;
+                                                    bottom: 2rem;
+                                                    left: 80px;">
+            <img src = "https://cdn.dribbble.com/users/627335/screenshots/2778091/media/c3c471187fa161e2fb2fab61d1308f98.gif" width = "390" height="150" style="margin-top: 5rem; border-radius: 50px; padding: 20px;height=200px; object-fit: cover;" class="gifimg">
+            </div>
 
         {{-- <div class="form-container">
             <form action="">
@@ -70,19 +81,19 @@
             <div class="box">
                 <i class='bx bxs-map'></i>
                 <h2>Choose A Location</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias porro a magnam cumque nulla repudiandae.</p>
+                <p>Select your preferred location, tailored for convenience. Choose from a wide array of options, ensuring seamless travel.</p>
             </div>
 
             <div class="box">
                 <i class='bx bxs-calendar-check'></i>
                 <h2>Pick-Up Date</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias porro a magnam cumque nulla repudiandae.</p>
+                <p>Pick your desired date, ensuring optimal convenience. Select from a broad calendar, perfectly aligning with your plans.</p>
             </div>
 
             <div class="box">
                 <i class='bx bxs-calendar-star'></i>
                 <h2>Book A Car</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias porro a magnam cumque nulla repudiandae.</p>
+                <p>Choose your dream vehicle, tailored for your comfort. Browse through a vast fleet, ensuring the perfect ride.</p>
             </div>
         </div>
     </section>
@@ -232,9 +243,9 @@
             </div>
             <div class="about-text">
                 <span>About Us</span>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, similique ex.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum maiores voluptate voluptatibus.</p>
-                <a href="#" class="btn" id="">Learn More</a>
+                <p>Welcome to a world of comfort, your journey starts here.  As a renowned company with a rich history, we’ve been providing exceptional service for many years. Our longevity in the industry is a testament to our commitment to excellence and customer satisfaction. We invite you to experience the difference with us.</p>
+                <p>Experience the best customer service in the industry. Our commitment to quality ensures unparalleled satisfaction</p>
+                <a href="https://en.wikipedia.org/wiki/Car_rental" target="_blank" class="btn" id="">Learn More</a>
             </div>
         </div>
     </section>
@@ -249,7 +260,7 @@
                 <div class="rev-img">
                     <img src="{{ asset('images/cars/rev1.jpg') }}" alt="">
                 </div>
-                <h2>Someone's name</h2>
+                <h2>Alex</h2>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
@@ -257,14 +268,14 @@
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star-half'></i>
                 </div>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, mollitia reiciendis?</p>
+                <p>Absolutely fantastic, exceeded all my expectations. Reliability, customer satisfaction ensured!</p>
             </div>
 
             <div class="box">
                 <div class="rev-img">
-                    <img src="{{ asset('images/cars/rev1.jpg') }}" alt="">
+                    <img src="{{ asset('images/cars/rev2.jpg') }}" alt="">
                 </div>
-                <h2>Someone's name</h2>
+                <h2>Chris</h2>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
@@ -272,14 +283,14 @@
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit provident mollitia molestiae.</p>
+                <p>Simply outstanding, the service exceeded all expectations. Quality, customer satisfaction guaranteed!</p>
             </div>
 
             <div class="box">
                 <div class="rev-img">
-                    <img src="{{ asset('images/cars/rev1.jpg') }}" alt="">
+                    <img src="{{ asset('images/cars/rev3.jpg') }}" alt="">
                 </div>
-                <h2>Someone's name</h2>
+                <h2>Lucy</h2>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
@@ -287,31 +298,88 @@
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star-half'></i>
                 </div>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, quod quaerat.</p>
+                <p>Exceptional service, truly a memorable experience. Efficiency, customer delight achieved!</p>
             </div>
 
         </div>
     </section>
     <!-- !NwsLetter -->
     <section class="newsletter">
-        <h2>Subscribe To Newsletter</h2>
+        <h2>Send Message</h2>
         <div class="box">
-            <input type="text" placeholder="Enter Your Email...">
-            <a href="#" class="btn" id="">Subscribe</a>
+            <input type="text" placeholder="Enter Your Message...">
+            <button class="btn" id="">Send</button>
         </div>
     </section>
     <div class="copyright">
         <p>&#169; Jami All Right Reserved</p>
         <div class="social">
-            <a href="#"><i class='bx bx1-facebook'></i></a>
-            <a href="#"><i class='bx bx1-twitter'></i></a>
-            <a href="#"><i class='bx bx1-instagram'></i></a>
+            <a href="https://github.com/jami47" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
         </div>
     </div>
+        {{-- @if (session('success'))
+            <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="successModalLabel">Success</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{ session('success') }}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif --}}
     <!-- !ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     {{--! <!-- !JavaScript --> --}}
     <script src="{{ asset('js/userscripts.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script>
+        @if (session('success'))
+            /* var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show(); */
+            alert('Car Rented Successfully');
+            @php
+                session()->pull('success');
+            @endphp
+        @endif
+
+        @if ($errors->any())
+            var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+            errorModal.show();
+        @endif
+    </script>
 </body>
 </html>

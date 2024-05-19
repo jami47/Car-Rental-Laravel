@@ -13,7 +13,7 @@
             <div class="col-md-3">
                 <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                     <div>
-                        <h3 class="fs-2">720</h3>
+                        <h3 class="fs-2">{{ count($cars) }}</h3> {{--! DataBase Entry  --}}
                         <p class="fs-5">Cars</p>
                     </div>
                     <i class="fas fa-car fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -23,7 +23,7 @@
             <div class="col-md-3">
                 <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                     <div>
-                        <h3 class="fs-2">4920</h3>
+                        <h3 class="fs-2">{{ count($users)-1 }}</h3> {{--! DataBase Entry  --}}
                         <p class="fs-5">Users</p>
                     </div>
                     <i

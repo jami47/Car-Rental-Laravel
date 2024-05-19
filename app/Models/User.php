@@ -48,4 +48,10 @@ class User extends Authenticatable
      * @var bool
      */
     public $timestamps = false;
+
+    //! This is for relation with rents table
+    public function rents()
+    {
+        return $this->hasMany(Rent::class);
+    }
 }

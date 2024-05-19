@@ -50,7 +50,7 @@
         }
     </style>
 </head>
-<body style="margin-left: 1rem; margin-right: 1rem; margin-top: 1rem; background-color: #009d63;">
+<body style="margin-left: 1rem; margin-right: 1rem; margin-top: 1rem; background-color: #009d63; background: url('/images/cars/renbg.jpg') no-repeat; background-size: cover; background-position: center; min-height: 100vh">
 
 
     <div class="" align="center">

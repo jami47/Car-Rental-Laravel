@@ -9,12 +9,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/userstyles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Return Car</title>
 </head>
 <body>
     <!-- !Services -->
     <section class="services" id="services">
+        <div class="d-flex justify-content-end align-items-top text-dark pt-3">
+            <!-- Check if the login route is available -->
+            @if (Route::has('login'))
+                <!-- Login/Register links container -->
+                <div class="top-0 end-0">
+                    <!-- Authentication check -->
+                    @auth
+                        <!-- Home link with 'fa-home' icon from Font Awesome -->
+                        <a href="{{ url('/home') }}" class="text-decoration-none text-dark me-3">
+                            <i class="fa fa-home"></i> Home
+                        </a>
+                    @endauth
+                </div>
+            @endif
+        </div>
+
         <div class="heading">
             <span>Best Services</span>
             <h1>Return Cars<br> That You Rented</h1>
@@ -128,11 +145,13 @@
         @endif
     </section>
 
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
     <script>
         @if (session('success'))
             var successModal = new bootstrap.Modal(document.getElementById('successModal'));
             successModal.show();
+            //alert('Car Returned Successfully');
         @endif
 
         @if ($errors->any())

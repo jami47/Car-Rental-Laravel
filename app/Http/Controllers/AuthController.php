@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Car;
+use App\Models\Rent;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -91,7 +92,10 @@ class AuthController extends Controller
     //! Admin Login
     public function dashpage()
     {
-        return view('admin.dashboard');
+        $cars = Car::all();
+        $users = User::all();
+        // $rents = Rent::all();
+        return view('admin.dashboard', ['cars' => $cars], ['users' => $users]);
     }
     public function dashcarpage()
     {
