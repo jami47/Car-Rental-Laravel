@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Car;
+use App\Models\Rent;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -90,13 +92,26 @@ class AuthController extends Controller
     //! Admin Login
     public function dashpage()
     {
-        return view('admin.dashboard');
+        $cars = Car::all();
+        $users = User::all();
+        // $rents = Rent::all();
+        return view('admin.dashboard', ['cars' => $cars], ['users' => $users]);
+    }
+    public function dashcarpage()
+    {
+        $cars = Car::all();
+        return view('admin.caradmin', ['cars' => $cars]);
+        // return view('admin.caradmin');
     }
 
     public function home()
     {
         if(Auth::user()->usertype == 'user')
-            return view('user.home');
+        {
+            $cars = Car::all();
+            return view('user.home', ['cars' => $cars]);
+        }
+
         else
             //return view('admin.dashboard');
             return redirect('dashboard');

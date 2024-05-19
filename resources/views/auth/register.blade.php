@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body style="background: url('/images/cars/rdr2.png') no-repeat; background-size: cover; background-position: center;">
 
     <div class="wrapper">
         <form action="{{ route('register') }}" method="POST">
